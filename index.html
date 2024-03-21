@@ -69,6 +69,73 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-线程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/zhenhong.github.io/2024/03/21/%E7%BA%BF%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2024-03-21T10:54:30.737Z" itemprop="datePublished">2024-03-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/zhenhong.github.io/2024/03/21/%E7%BA%BF%E7%A8%8B/">关于线程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <font size=4>
+
+<h1 id="关于线程"><a href="#关于线程" class="headerlink" title="关于线程"></a>关于线程</h1><hr>
+<p>作为一个刚学计算机的小白，我对线程的理解，只能说是一塌糊涂，因为线程实在是有<br>点奇怪。为什么这么说呢，首先我们看一串代码，与他的执行结果，有意思的事情就出<br>现了。<br>‘’’ </p>
+<pre><code>            python
+            import time
+            from threading import Thread
+
+
+            def say_hello():
+                print(&#39;Hello&#39;)
+                time.sleep(1)
+                # 在sleep的时候进行的其他操作
+                print(&quot;你&quot;+&quot;好&quot;, end=&quot;啦&quot;)
+
+
+            # 主进程
+            if __name__ == &#39;__main__&#39;:
+                for i in range(5):
+                    # 创建子线程
+                    t = Thread(target=say_hello)
+
+                    t.start()
+                    # t.join()
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<p><img src="https://img2.imgtp.com/2024/03/21/6DDzKtt6.png" alt="1711020447191.png"><br>为什么产生这个<strong>结果</strong>呢  </p>
+<p>程序在执行的时候并不是跑完一个任务之后再开始执行另一个的，感觉是在执行程序的<br>时候，他在跑完一行代码的时候，另一行代码也就开始跑了，这里并不是指睡眠疫苗，<br>而是for 循环的第二哥变量在执行时的第一行代码，这也就解释了为什么是五个hello。  </p>
+<p>这里注意后面的代码，在睡眠一秒后，出现了数据乱码的情况，在print 后的end 有时<br>执行的慢，有时执行的快，这也解释了线程中的抢跑情况，目前我只能这样理解啦。</p>
+<h1 id="希望在python上更进一步啦"><a href="#希望在python上更进一步啦" class="headerlink" title="希望在python上更进一步啦"></a>希望在python上更进一步啦</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://askjackie.github.io/zhenhong.github.io/2024/03/21/%E7%BA%BF%E7%A8%8B/" data-id="clu15ryr10002aoab51sactul" data-title="关于线程" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/zhenhong.github.io/2024/03/19/hello-world/" class="article-date">
@@ -108,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://askjackie.github.io/zhenhong.github.io/2024/03/19/hello-world/" data-id="cltyiwepi0001zgabg7utgwem" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://askjackie.github.io/zhenhong.github.io/2024/03/19/hello-world/" data-id="clu15ryqz0001aoab8yj34t9w" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -142,9 +209,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="C语言第一天"><a href="#C语言第一天" class="headerlink" title="C语言第一天"></a>C语言第一天</h1><hr>
-<h3 id="关于变量："><a href="#关于变量：" class="headerlink" title="关于变量："></a>关于变量：</h3><pre><code>#include&lt;stdio.h&gt;
+        <font size=4>
 
+<h1 id="C语言第一天"><a href="#C语言第一天" class="headerlink" title="C语言第一天"></a>C语言第一天</h1><hr>
+<h3 id="关于变量："><a href="#关于变量：" class="headerlink" title="关于变量："></a>关于变量：</h3><pre><code>#include&lt;stdio.h&gt;
 int main() &#123;
     printf(&quot;%dbite\n&quot;,sizeof(char));
     printf(&quot;%dbite\n&quot;,sizeof(int));
@@ -158,19 +226,26 @@ int main() &#123;
 // 显示变量容器的大小
 </code></pre>
 <ul>
-<li>上面是变量容器的大小，以比特字符容量为基础。</li>
-<li>return 0；相当于停止读取以下代码，在将printf放在最下面时，会出现，后一行无法运行。</li>
-<li>在MySQL中一个字符是俩比特，这个不知道是不是具体得后面查找。</li>
-<li>毫无疑问的是它的命名并不像python那么自由，需要相应的定义，但隐隐约约觉得他的内存利用率很高，这可能是他的有点，像个刻刀一步一步的往下雕刻。</li>
-<li>另外C语言里的大括号有点像一个存放各种仪器的仓库，现在学习的printf，以及scanf这些都得在仓库里面运行。</li>
-<li>而括号外是全局，这里值得注意的是，可以看成一个属地户籍。比如我在湖北，相当于最外层大括号，依次缩小自己的属地，而我可以调用我上一级的信息地，我可以说我是湖北的，当更近一级的地方出现时，这个数据便被更改的更明确了，因此局部的变量可以被下一级更改后使用。</li>
-<li>python 中，在对定义函数时，有局部和全局变量需要使用global，globals <em>nonelocal</em>（用了工具容易手残不记得了）这些定义一遍局部变量，或者全局变量才能更改数据。</li>
+<li><p>上面是变量容器的大小，以比特字符容量为基础。</p>
+</li>
+<li><p>return 0；相当于停止读取以下代码，在将printf放在最下面时，会出现，后一行无法运行。</p>
+</li>
+<li><p>在MySQL中一个字符是俩比特，这个不知道是不是具体得后面查找。  </p>
+</li>
+<li><p>毫无疑问的是它的命名并不像python那么自由，需要相应的定义，但隐隐约约觉得他的内存利用率很高，这可能是他的有点，像个刻刀一步一步的往下雕刻。</p>
+</li>
+<li><p>另外C语言里的大括号有点像一个存放各种仪器的仓库，现在学习的printf，以及scanf这些都得在仓库里面运行。</p>
+</li>
+<li><p>而括号外是全局，这里值得注意的是，可以看成一个属地户籍。比如我在湖北，相当于最外层大括号，依次缩小自己的属地，而我可以调用我上一级的信息地，我可以说我是湖北的，当更近一级的地方出现时，这个数据便被更改的更明确了，因此局部的变量可以被下一级更改后使用。</p>
+</li>
+<li><p>python 中，在对定义函数时，有局部和全局变量需要使用global，globals <em>nonelocal</em>（用了工具容易手残不记得了）这些定义一遍局部变量，或者全局变量才能更改数据。</p>
+</li>
 </ul>
-<h3 id="个人感觉C跟python里面的相似点不止一处，只不过python更暴力"><a href="#个人感觉C跟python里面的相似点不止一处，只不过python更暴力" class="headerlink" title="个人感觉C跟python里面的相似点不止一处，只不过python更暴力"></a>个人感觉C跟<em>python</em>里面的相似点不止一处，只不过<em>python</em>更暴力</h3>
+<h3 id="个人感觉C跟python里面的相似点不止一处，只不过python更暴力size-1"><a href="#个人感觉C跟python里面的相似点不止一处，只不过python更暴力size-1" class="headerlink" title="个人感觉C跟python里面的相似点不止一处，只不过python更暴力size&#x3D;1"></a>个人感觉C跟<em>python</em>里面的相似点不止一处，只不过<em>python</em>更暴力size&#x3D;1</h3></font>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://askjackie.github.io/zhenhong.github.io/2024/03/19/C%20%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/" data-id="cltyiwepc0000zgabbs2je81c" data-title="C语言" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://askjackie.github.io/zhenhong.github.io/2024/03/19/C%20%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/" data-id="clu15ryqt0000aoabb6x7div6" data-title="C语言" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -211,6 +286,10 @@ int main() &#123;
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/zhenhong.github.io/2024/03/21/%E7%BA%BF%E7%A8%8B/">关于线程</a>
+          </li>
         
           <li>
             <a href="/zhenhong.github.io/2024/03/19/hello-world/">Hello World</a>

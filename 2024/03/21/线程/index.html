@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>关于线程 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="关于线程 作为一个刚学计算机的小白，我对线程的理解，只能说是一塌糊涂，因为线程实在是有点奇怪。为什么这么说呢，首先我们看一串代码，与他的执行结果，有意思的事情就出现了。‘’’              python             import time             from threading import Thread               def say_hel">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于线程">
+<meta property="og:url" content="https://askjackie.github.io/zhenhong.github.io/2024/03/21/%E7%BA%BF%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于线程 作为一个刚学计算机的小白，我对线程的理解，只能说是一塌糊涂，因为线程实在是有点奇怪。为什么这么说呢，首先我们看一串代码，与他的执行结果，有意思的事情就出现了。‘’’              python             import time             from threading import Thread               def say_hel">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img2.imgtp.com/2024/03/21/6DDzKtt6.png">
+<meta property="article:published_time" content="2024-03-21T10:54:30.737Z">
+<meta property="article:modified_time" content="2024-03-21T11:37:48.966Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2.imgtp.com/2024/03/21/6DDzKtt6.png">
+  
+    <link rel="alternate" href="/zhenhong.github.io/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/zhenhong.github.io/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/zhenhong.github.io/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/zhenhong.github.io/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/zhenhong.github.io/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/zhenhong.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="/zhenhong.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/zhenhong.github.io/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://askjackie.github.io/zhenhong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-线程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/zhenhong.github.io/2024/03/21/%E7%BA%BF%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2024-03-21T10:54:30.737Z" itemprop="datePublished">2024-03-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      关于线程
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <font size=4>
+
+<h1 id="关于线程"><a href="#关于线程" class="headerlink" title="关于线程"></a>关于线程</h1><hr>
+<p>作为一个刚学计算机的小白，我对线程的理解，只能说是一塌糊涂，因为线程实在是有<br>点奇怪。为什么这么说呢，首先我们看一串代码，与他的执行结果，有意思的事情就出<br>现了。<br>‘’’ </p>
+<pre><code>            python
+            import time
+            from threading import Thread
+
+
+            def say_hello():
+                print(&#39;Hello&#39;)
+                time.sleep(1)
+                # 在sleep的时候进行的其他操作
+                print(&quot;你&quot;+&quot;好&quot;, end=&quot;啦&quot;)
+
+
+            # 主进程
+            if __name__ == &#39;__main__&#39;:
+                for i in range(5):
+                    # 创建子线程
+                    t = Thread(target=say_hello)
+
+                    t.start()
+                    # t.join()
+</code></pre>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</p>
+<p><img src="https://img2.imgtp.com/2024/03/21/6DDzKtt6.png" alt="1711020447191.png"><br>为什么产生这个<strong>结果</strong>呢  </p>
+<p>程序在执行的时候并不是跑完一个任务之后再开始执行另一个的，感觉是在执行程序的<br>时候，他在跑完一行代码的时候，另一行代码也就开始跑了，这里并不是指睡眠疫苗，<br>而是for 循环的第二哥变量在执行时的第一行代码，这也就解释了为什么是五个hello。  </p>
+<p>这里注意后面的代码，在睡眠一秒后，出现了数据乱码的情况，在print 后的end 有时<br>执行的慢，有时执行的快，这也解释了线程中的抢跑情况，目前我只能这样理解啦。</p>
+<h1 id="希望在python上更进一步啦"><a href="#希望在python上更进一步啦" class="headerlink" title="希望在python上更进一步啦"></a>希望在python上更进一步啦</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://askjackie.github.io/zhenhong.github.io/2024/03/21/%E7%BA%BF%E7%A8%8B/" data-id="clu15ryr10002aoab51sactul" data-title="关于线程" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/zhenhong.github.io/2024/03/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/zhenhong.github.io/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/zhenhong.github.io/2024/03/21/%E7%BA%BF%E7%A8%8B/">关于线程</a>
+          </li>
+        
+          <li>
+            <a href="/zhenhong.github.io/2024/03/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/zhenhong.github.io/2024/03/19/C%20%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E8%AF%BE/">C语言</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/zhenhong.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="/zhenhong.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/zhenhong.github.io/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/zhenhong.github.io/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/zhenhong.github.io/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
